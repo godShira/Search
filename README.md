@@ -60,3 +60,7 @@ var app=angular.module('myApp',[]);
 		};
 	})
 ```
+## pc端搜索效果如下图所示：
+<p align="center">
+  <img src="img/sketch_01.jpg" alt="效果图">
+</p>
