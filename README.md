@@ -3,7 +3,7 @@ angularJs百度搜索功能
 ##使用方法
 ###载入 CSS 文件
 ```css
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
 ```
 
 ###DOM头部载入 JavaScript 文件
@@ -16,16 +16,16 @@ angularJs百度搜索功能
 ###DOM 结构
 ```html
 <div id="suggest-align" class="search-input">
-							    <!--关闭自动生成的历史记录 autocomplete="off"-->
-							    <!--记得name等于搜索地址码后键值对的值-->
-								<input type="text" autocomplete="off" class="placeholder" id="input"  name="q" placeholder="陈坤删光赵薇照片" ng-model="name" ng-change="getData(name)"/>
-								<ul id="news-list">
-									<li ng-repeat="item in items">
-									    <em class="hot">{{$index + 1}}</em>
-									    <span ng-class="selectLast($index)">{{item}}</span>
-									</li>
-								</ul>
-							</div>
+<!--关闭自动生成的历史记录 autocomplete="off"-->
+<!--记得name等于搜索地址码后键值对的值-->
+	<input type="text" autocomplete="off" class="placeholder" id="input"  name="q" placeholder="陈坤删光赵薇照片" ng-model="name" ng-change="getData(name)"/>
+	<ul id="news-list">
+		<li ng-repeat="item in items">
+			<em class="hot">{{$index + 1}}</em>
+			<span ng-class="selectLast($index)">{{item}}</span>
+		</li>
+	</ul>
+</div>
 ```
 
 ###调用 
