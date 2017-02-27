@@ -28,7 +28,7 @@ angularJs百度搜索功能
 </div>
 ```
 
-###调用 
+###JOSOP请求调用接口数据 
 ```javascript
 var app=angular.module('myApp',[]);
 	app.controller('firstController',function($scope,$http,$timeout){
