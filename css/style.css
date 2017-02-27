@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;border:none; font-family: "Microsoft YaHei",arial,sans-serif;}
+ul,ol,li{list-style:none;}
+img{display:block;}
+a{text-decoration: none;}
+body,html{ height: 100%;}
+body{
+    width: 100%;
+    min-height: 500px;
+    /*********************做宽高自适应，给body加相对定位*************************/
+    position: relative;
+    background:#fff no-repeat center;
+    background-size: cover;
+}
+.middle-wrap{width: 100%;}
+.middle{min-width:990px;margin:0 auto;}
+/*******************中部***********************/
+.middle{
+	clear: both;
+    margin: 0 auto;
+	padding-bottom: 75px;
+	width: 880px;
+}
+/*④ 给父元素加前置内容生成,使第一个子元素的margintop生效*/
+.middle:before{
+        content:" ";
+        display:table;
+}
+
+#bg_logo {
+	margin: 45px auto 25px;
+	position: relative;
+}
+#bg_logo .skin-logo{
+	background: url(../img/dandan_search.png) no-repeat center center;
+    display: block;
+    height: 125px;
+    margin: 0 auto;
+    position: relative;
+	width: 400px;
+	z-index: 0;
+}
+
+#bg_search {
+	margin: 0 auto 20px;
+	width: 645px;
+}
+
+#input-container {
+	background: #fff;
+	height: 44px;
+	position: relative;
+	width: 531px;
+	z-index: 9;
+}
+
+#suggest-align {
+	background: #fff;
+	height: 34px;
+	padding: 4px 10px 4px 12px;
+	position: relative;
+	vertical-align: top;
+}
+.search-input {
+	border: 1px solid #ccc;
+	position: relative;
+}
+.search-input #news-list{
+    display: none;
+    position: absolute;
+    top: 43px;
+    left: -1px;
+    width: 529px;
+    border: 1px solid silver;
+	border-top: none;
+}
+.search-input #news-list li{
+    cursor: pointer;
+    line-height: 20px;
+    padding-left: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.search-input #news-list li:hover{
+    background-color: #eee;
+}
+.search-input #news-list em{
+    font-style: normal;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    font-family: Tahoma;
+    width: 15px;
+    height: 15px;
+    line-height: 14px;
+    margin-right: 4px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    background: url(../img/t0196272126b9546c95.png) no-repeat 0 -26px;
+}
+.search-input #news-list li .hot {
+    background-position: 0 0;
+}
+.search-input #news-list li span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.search-input #news-list li .new {
+    background: url(../img/t0196272126b9546c95.png) no-repeat right -46px;
+    padding-right: 20px;
+}
+.search-input-hover{
+    border-color: #888;
+}
+.search-input-focus{
+    border-color: green;
+}
+
+#input {
+	background: #fff;
+	border: none;
+	color: #333;
+	float: left;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px\9;
+	margin-top: 3px;
+	/*让获得焦点时无默认边框 outline描边*/
+	outline: none;
+	width: 506px;
+}
+#search-btn {
+	cursor: pointer;
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	height: 44px;
+	left: 530px;
+	outline: none;
+	position: absolute;
+	top: 0;
+	vertical-align: top;
+	width: 110px;
+	background: #19b955;
+	color: #fff;
+}
+#search-btn:hover{
+    background: #19cd55;
+}
+
+
+

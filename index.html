@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>angularjs搜索框</title>
+		<!--CSS样式引入-->
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<!--JS引入-->
+		<script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script  type="text/javascript" src="js/index.js"></script>
+	</head>
+	<body ng-app="myApp">
+
+		
+		<!--中部-->
+		<div class="middle-wrap" ng-controller="firstController">
+			<div class="middle">
+				<div id="bg_logo">
+					<a class="skin-logo" href="#"></a>
+				</div>
+				<div id="bg_search">
+					<form action="https://www.so.com/s" method="get">
+						<fieldset id="input-container">
+							<div id="suggest-align" class="search-input">
+							    <!--关闭自动生成的历史记录 autocomplete="off"-->
+							    <!--记得name等于搜索地址码后键值对的值-->
+								<input type="text" autocomplete="off" class="placeholder" id="input"  name="q" placeholder="陈坤删光赵薇照片" ng-model="name" ng-change="getData(name)"/>
+								<ul id="news-list">
+									<li ng-repeat="item in items">
+									    <em class="hot">{{$index + 1}}</em>
+									    <span ng-class="selectLast($index)">{{item}}</span>
+									</li>
+								</ul>
+							</div>
+							<input type="submit" class="search-btn" id="search-btn" value="搜一下"/>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+</html>
+
+<script type="text/javascript">
+	var app=angular.module('myApp',[]);
+	app.controller('firstController',function($scope,$http,$timeout){
+		$scope.selectLast ="";
+		$scope.name = '';
+		var timer = '';
+		$scope.getData=function(name){
+			$timeout.cancel(timer);
+			timer=$timeout(function(){
+				var url = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+name+'&cb=JSON_CALLBACK'; //检索库
+				$http.jsonp(url).success(
+						function(data){
+							$scope.items = data.s;
+							console.log(data);
+							$scope.selectLast = function (index) {
+								if(index <= 2){
+									return 'new';
+								}else{
+									return '';
+								}
+							}
+						}
+				).error(function(){
+					alert('请求数据失败，请在服务器环境运行');
+				});
+
+			},300)
+
+		};
+	})
+
+</script>
+
